@@ -29,7 +29,7 @@ import bibili from '../../images/kenh/bibili.png'
 import youtube from '../../images/kenh/youtube.jpg'
 import vtc from '../../images/kenh/vtc.png'
 import netflix from '../../images/kenh/netflix.png'
-import {object} from "prop-types";
+import off from '../../images/kenh/off.png'
 
 const TYPE_ = {
     2: 'Sử dụng điện thoại từ xa'
@@ -75,7 +75,8 @@ const dataTivi = {
 }
 function HeThongGiaiTri() {
     const [tivi, setTive] = useState(tivi_off);
-    const [channel, setChannel] = useState(tivi_off);
+    const [channel, setChannel] = useState(null);
+    const refPreChanel = useRef('netflix');
 
     const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
@@ -87,8 +88,6 @@ function HeThongGiaiTri() {
     function toggleModal() {
         setIsOpen(!isOpen);
     }
-
-
     return(
         <div className={'flex hethongremthongminh show_left'}>
             <div className={'flex justify-content_center margin_bottom-10'}>
@@ -106,9 +105,6 @@ function HeThongGiaiTri() {
                             </button>
                         ))
                     }
-                    {/*<button className={'button-19 backgroundColor_42a600'}>*/}
-                    {/*    x*/}
-                    {/*</button>*/}
                 </div>
             </div>
             <Modal
@@ -128,7 +124,21 @@ function HeThongGiaiTri() {
                     height: window.innerHeight * 0.7,
                     overflowY: 'auto',
                 }}>
-                    <h1 className={'text-align margin_bottom-10'}>Ứng dụng quản lý nhà thông minh</h1>
+                    <div className={'flex flex_column justify-content_center align-items_center'}>
+                        <img
+                            src={off}
+                            width={50}
+                            className={'cursor_pointer margin_bottom-10'}
+                            onClick={() => {
+                                if(channel) {
+                                    setChannel(null)
+                                    refPreChanel.current = channel;
+                                } else {
+                                    setChannel(refPreChanel.current)
+                                }
+                            }}
+                        />
+                    </div>
                     <h3 className={'text-align'}>
                         Hiện chỉnh TIVI
                     </h3>
