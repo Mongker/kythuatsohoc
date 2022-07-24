@@ -221,3 +221,20 @@ body {
 .background-ative {
     background-color: rgb(69, 63, 251);
 }
+.camera-x {
+    background-color: #222222;
+    color: white;
+    width: 70px;
+    height: 50px;
+    margin: 5px 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.xxx {
+    border: 1px solid #131212 !important;
+    border-radius: 16px;
+}
