@@ -25,7 +25,7 @@ const style = {
     padding: '0.5rem 1rem',
     cursor: 'move',
     width: 750,
-    height: 400,
+    height: 500,
 }
 
 

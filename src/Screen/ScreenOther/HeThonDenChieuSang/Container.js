@@ -19,8 +19,8 @@ import Box from './Box'
 import ItemTypes from './ItemTypes'
 
 const styles = {
-    width: 700,
-    height: 700,
+    width: 750,
+    height: 550,
     position: 'relative',
     backgroundColor: 'transparent',
     borderRadius: '15px',

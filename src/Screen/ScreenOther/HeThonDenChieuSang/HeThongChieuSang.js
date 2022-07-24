@@ -44,12 +44,12 @@ function HeThongChieuSang() {
     const [isOpen, setIsOpen] = useState(false);
     const [isXO, setXO] = useState(false);
     const [boxes, setBoxes] = useState({
-        a: { top: 650, left: 256, title: 'Hot' },
+        a: { top: 300, left: 0, title: 'Hot' },
         b: { top: 5, left: 0, title: 'Home' },
     })
     console.log('boxes.a.top', boxes.a.top); // MongLV log fix bug
     React.useLayoutEffect(() => {
-        if(boxes.a.top <= 257) {
+        if(boxes.a.top <= 253) {
             timer1 = setTimeout(() => setXO(true), 1000)
         } else {
             timer1 = setTimeout(() => setXO(false), 1000)
