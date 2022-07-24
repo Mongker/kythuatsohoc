@@ -7,9 +7,10 @@ import './App.css';
 // Screen
 import Screen1 from "./Screen/Screen1";
 import Screen2 from "./Screen/Screen2";
+import Screen3 from "./Screen/Screen3";
 
 function App() {
-  const [screenApp, _setScreenApp] = useState(1);
+  const [screenApp, _setScreenApp] = useState(3);
 
   const ComponentScreenApp = useMemo(() => {
     let Component = <React.Fragment />
@@ -20,13 +21,14 @@ function App() {
       case 2:
         Component = Screen2;
         break;
+      case 3:
+        Component = Screen3;
+        break;
       default:
         break;
     }
     return Component;
   }, [screenApp]);
-
-  console.log('screenApp', screenApp); // MongLV log fix bug
 
   const setScreenApp = useCallback((value) => _setScreenApp(value), [screenApp])
 

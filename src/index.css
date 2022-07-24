@@ -2,5 +2,178 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: rgb(214 218 221);
+}
+.flex {
+  display: flex;
+}
+.flex_column {
+    flex-direction: column;
+}
+.flex_row {
+    flex-direction: row;
+}
+.justify-content_space-around {
+    justify-content: space-around;
+}
+.justify-content_center {
+    justify-content: center;
+}
+.align-items_center {
+    align-items: center;
+}
+
+.root3 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.root3-title {
+    font-family: 'Brush Script MT', cursive;
+    color: #F8CD0A;
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 5px 2px 4px grey;
+}
+.container_3 {
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.container_3-item1 {
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.container_3-item2 {
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.container_3-item1-remote {
+  background-color: #e0d3c3;
+  border-radius: 45px;
+  width: 50%;
+  height: 80%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container_3-item1-remote-button {
+  text-align: center;
+  width: 80%;
+  height: 60px;
+  display: block;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button-19 {
+ appearance: button;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-family: din-round,sans-serif;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 13px 16px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.hethongremthongminh {
+    flex-direction: column;
+}
+.margin_bottom-10 {
+    margin-bottom: 10px;
+}
+
+.backgroundColor_42a600 {
+    background-color: #42a600;
+}
+
+.mobile {
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+.hinh_tron {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #b9b6b6;
+    bottom: 15px;
+    border: 1px solid #131212 !important;
+}
+
+.hinh_tron2 {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.camera {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    border-radius: 100%;
+    top: 12px;
+    background-color: #000;
+}
+
+.text-align {
+    text-align: center
+}
+
+.ReactModal__Overlay {
+    background-color: transparent !important;
 }
