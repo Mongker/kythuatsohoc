@@ -17,6 +17,7 @@ import React, {useState} from 'react';
 import smartHome from '../images/smarthome1.jpg'
 import HeThongManhRem from "./ScreenOther/HeThongManhRem";
 import HeThongBaoChay from "./ScreenOther/HeThonBaoChay";
+import HeThongThietBiNhiet from "./ScreenOther/HeThongThietBiNhiet";
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
@@ -42,6 +43,7 @@ function Screen3() {
                 component = <HeThongBaoChay />
              break;
             case TYPE_ACTIVE_BTN['3']:
+                component = <HeThongThietBiNhiet />
                 break;
             case TYPE_ACTIVE_BTN['4']:
                 break;

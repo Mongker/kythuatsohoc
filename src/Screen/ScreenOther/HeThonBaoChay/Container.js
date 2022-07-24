@@ -12,7 +12,7 @@
  * @modifier abc@bkav.com on xx/xx/xxxx đã chỉnh sửa abcxyx (Chỉ các thay đổi quan trọng mới cần ghi lại note này)
  */
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import update from 'immutability-helper'
 import { useDrop } from 'react-dnd'
 import Box from './Box'
@@ -26,7 +26,6 @@ const styles = {
     borderRadius: '15px',
 }
 const Container = ({ hideSourceOnDrag, boxes, setBoxes }) => {
-    console.log('boxes', boxes); // MongLV log fix bug
     const moveBox = useCallback(
         (id, left, top) => {
             if(id !== 'b') {
