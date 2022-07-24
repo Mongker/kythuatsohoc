@@ -74,8 +74,8 @@ function HeThongThietBiNhiet() {
                     <div className={'flex flex_row justify-content_space-between'}>
                         <button className={'button-19 backgroundColor_42a600 margin_bottom-10'} style={{
                             backgroundColor: 'red'
-                        }} onClick={() => setNgoaiTroi((number) => number + 5)}>(+) Tăng 5 nhiệt độ</button>
-                        <button className={'button-19 backgroundColor_42a600 margin_bottom-10'} onClick={() => setNgoaiTroi((number) => number - 5)}>(-) Giảm 5 nhiệt độ</button>
+                        }} onClick={() => setNgoaiTroi((number) => number + 5)}>(+) Tăng 5 °C</button>
+                        <button className={'button-19 backgroundColor_42a600 margin_bottom-10'} onClick={() => setNgoaiTroi((number) => number - 5)}>(-) Giảm 5  °C</button>
                     </div>
                 </div>
             </div>
