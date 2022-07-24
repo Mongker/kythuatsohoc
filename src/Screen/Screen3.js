@@ -48,7 +48,7 @@ function Screen3() {
                 component = <HeThongThietBiNhiet />
                 break;
             case TYPE_ACTIVE_BTN['4']:
-                component = <HeThongGiaiTri />
+                // component = <HeThongGiaiTri />
                 break;
             case TYPE_ACTIVE_BTN['5']:
                 component = <HeThongGiaiTri />
