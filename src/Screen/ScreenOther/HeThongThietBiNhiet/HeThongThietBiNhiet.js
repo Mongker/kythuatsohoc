@@ -42,19 +42,13 @@ function HeThongThietBiNhiet() {
     const [ngoaiTroi, setNgoaiTroi] = useState(30);
     const [trongNha, setTrongNha] = useState(25);
     const [isAI, setIsAI] = useState(true);
-    const [isShowAlert, setIsShowAlert] = useState(false);
-    const refShow = useRef(true);
     useEffect(() => {
-        if(ngoaiTroi > 35) {
-            setTrongNha(25);
-        } else if (ngoaiTroi <= 25) {
+        if(ngoaiTroi > 25 && ngoaiTroi < 200) {
             setTrongNha(27);
+        } else if (ngoaiTroi <= 25) {
+            setTrongNha(25);
         }
-        if(refShow.current !== isShowAlert) {
-            timer1 = setTimeout(() => setIsShowAlert(!isShowAlert), 3000)
-            refShow.current = !isShowAlert;
-        }
-    }, [ngoaiTroi])
+    }, [ngoaiTroi, isAI])
     useEffect(() => {
         return () => {
             clearTimeout(timer1);
