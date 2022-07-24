@@ -16,6 +16,7 @@ import React, {useState} from 'react';
 // import PropTypes from 'prop-types';
 import smartHome from '../images/smarthome1.jpg'
 import HeThongManhRem from "./ScreenOther/HeThongManhRem";
+import HeThongBaoChay from "./ScreenOther/HeThonBaoChay";
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
@@ -38,6 +39,7 @@ function Screen3() {
                 component = <HeThongManhRem />
              break;
             case TYPE_ACTIVE_BTN['2']:
+                component = <HeThongBaoChay />
              break;
             case TYPE_ACTIVE_BTN['3']:
                 break;
@@ -77,6 +79,7 @@ function Screen3() {
                         {
                             Object.values(TYPE_ACTIVE_BTN).map((item) => (
                                 <button
+                                    key={item}
                                     className={'flex container_3-item1-remote-button button-19'}
                                     onClick={() => setTypeActive(item)}
                                     style={{

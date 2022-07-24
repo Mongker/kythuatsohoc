@@ -1,7 +1,5 @@
 import React, {useCallback, useMemo, useState} from 'react';
 // import logo from './logo.svg';
-// import { DndProvider } from 'react-dnd';
-// import { HTML5Backend } from 'react-dnd-html5-backend';
 import './App.css';
 
 // Screen
