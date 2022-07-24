@@ -20,6 +20,7 @@ import HeThongBaoChay from "./ScreenOther/HeThonBaoChay";
 import HeThongThietBiNhiet from "./ScreenOther/HeThongThietBiNhiet";
 import HeThongGiaiTri from "./ScreenOther/HeThongGiaiTri";
 import HeThongAnNinh from "./ScreenOther/HeThongAnNinh";
+import HeThongChieuSang from "./ScreenOther/HeThonDenChieuSang";
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
@@ -56,6 +57,7 @@ function Screen3() {
             case TYPE_ACTIVE_BTN['6']:
                 break;
             case TYPE_ACTIVE_BTN['7']:
+                component = <HeThongChieuSang />
                 break;
             case TYPE_ACTIVE_BTN['8']:
                 component = <HeThongAnNinh />
