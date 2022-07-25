@@ -120,18 +120,20 @@ function HeThongChuyenDoiNangLuong() {
                     <div className={'flex flex_column justify-content_center align-items_center'} style={{height: '200px'}}>
                         <button
                             onClick={() => onChangeUpdate('dienluoi')}
+                            disabled={channel === 'dienluoi'}
                             className={'hinh_tron2 flex justify-content_center align-items_center button-19 backgroundColor_42a600 margin_bottom-10'}
                             style={{
-                                backgroundColor: channel === 'dienluoi'? '#42a600' : '#a3ec75',
+                                backgroundColor: channel === 'dienluoi'? '#42a600' : 'rgb(66 166 0 / 58%)',
                             }}
                         >
                             Điện Lưới
                         </button>
                         <button
                             onClick={() => onChangeUpdate('dienmattroi')}
+                            disabled={channel === 'dienmattroi'}
                             className={'hinh_tron2 flex justify-content_center align-items_center button-19 backgroundColor_42a600 margin_bottom-10'}
                             style={{
-                                backgroundColor: channel === 'dienmattroi'? '#42a600' : '#a3ec75',
+                                backgroundColor: channel === 'dienmattroi'? '#42a600' : 'rgb(66 166 0 / 58%)',
                             }}
                         >
                             Điện Mặt Trời

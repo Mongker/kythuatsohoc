@@ -14,9 +14,8 @@
 
 import React, {useEffect, useRef, useState} from 'react';
 import Modal from 'react-modal';
-import img from '../../../images/2-phong-cach-thiet-ke.jpg';
-import {number} from "prop-types";
-import {tr} from "faker/lib/locales";
+import img from '../../../images/dieuhoa.jpg';
+import ai from '../../../audio/nhietdo.mp3'
 
 
 const customStyles = {
@@ -80,7 +79,7 @@ function HeThongThietBiNhiet() {
                 </div>
             </div>
             <div className={'flex justify-content_center flex_column margin_bottom-10'}>
-                <img src={img} height={'70%'}/>
+                <img src={img} height={'500px'}/>
                 <div className={'nhiet_do flex justify-content_center'}>
                     <div className={'hinh_tron_nhiet_do flex justify-content_center align-items_center margin_bottom-10'}><h3 style={{color: '#fff'}}>{trongNha} °C</h3></div>
                     {
@@ -100,6 +99,9 @@ function HeThongThietBiNhiet() {
 
                 </div>
             </div>
+            {
+                isAI && <audio autoPlay src={ai} />
+            }
             <div className={'flex justify-content_center'}>
                 <div className={'flex flex_column justify-content_space-around'}>
                     <button onClick={() => {
