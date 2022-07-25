@@ -21,12 +21,13 @@ import HeThongThietBiNhiet from "./ScreenOther/HeThongThietBiNhiet";
 import HeThongGiaiTri from "./ScreenOther/HeThongGiaiTri";
 import HeThongAnNinh from "./ScreenOther/HeThongAnNinh";
 import HeThongChieuSang from "./ScreenOther/HeThonDenChieuSang";
+import HeThongChuyenDoiNangLuong from './ScreenOther/HeThongChuyenDoiNangLuong';
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
     2: 'Hệ thống báo động cháy',
     3: 'Hệ thống thiết bị nhiệt',
-    4: 'Hệ thống thoát nước',
+    // 4: 'Hệ thống thoát nước',
     5: 'Hệ thống giải trí',
     6: 'Hệ thống chuyển đổi năng lượng',
     7: 'Hệ thống chiếu sáng',
@@ -48,13 +49,14 @@ function Screen3() {
             case TYPE_ACTIVE_BTN['3']:
                 component = <HeThongThietBiNhiet />
                 break;
-            case TYPE_ACTIVE_BTN['4']:
-                // component = <HeThongGiaiTri />
-                break;
+            // case TYPE_ACTIVE_BTN['4']:
+            //     component = <HeThongGiaiTri />
+            //     break;
             case TYPE_ACTIVE_BTN['5']:
                 component = <HeThongGiaiTri />
                 break;
             case TYPE_ACTIVE_BTN['6']:
+                component = <HeThongChuyenDoiNangLuong />
                 break;
             case TYPE_ACTIVE_BTN['7']:
                 component = <HeThongChieuSang />

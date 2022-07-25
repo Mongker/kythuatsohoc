@@ -18,6 +18,8 @@ import Modal from 'react-modal';
  // import PropTypes from 'prop-types';
 import open_video from '../../video/mo_cua.mp4'
 import close_video from '../../video/dong_cua.mp4'
+import dongrem from '../../audio/dongrem.mp3';
+import morem from '../../audio/morem.mp3';
 
 const TYPE_ = {
     1: 'Sử dụng giọng nói:',
@@ -37,9 +39,12 @@ const customStyles = {
         inset: '50% auto auto 60%',
     },
 };
+
 Modal.setAppElement("#root");
+
 let timer1;
- function HeThongManhRem() {
+
+function HeThongManhRem() {
     const [vis, setVis] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const refMount = useRef(false);
@@ -63,6 +68,7 @@ let timer1;
              <div className={'flex justify-content_center margin_bottom-10'}>
                  <video src={!vis ? open_video : close_video} width={'80%'} autoPlay={refMount.current}/>
              </div>
+             <audio autoPlay={refMount.current && !isOpen} src={!vis ? dongrem : morem} />
              <div className={'flex justify-content_center'}>
                  <div className={'flex flex_column justify-content_space-around'}>
                      {
@@ -120,7 +126,7 @@ let timer1;
              </Modal>
          </div>
      );
- }
+}
 
  HeThongManhRem.propTypes = {};
 
