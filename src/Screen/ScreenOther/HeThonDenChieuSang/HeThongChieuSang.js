@@ -18,7 +18,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import lua from '../../../images/fram.png'
-import chaynha from '../../../audio/chaynha.mp3'
+import chaomungbanvenha from '../../../audio/chaomungbanvenha.mp3'
 
 import Container from "./Container";
 
@@ -69,30 +69,9 @@ function HeThongChieuSang() {
             <DndProvider backend={HTML5Backend}>
                 <Container hideSourceOnDrag boxes={boxes} setBoxes={setBoxes} isXO={isXO} />
             </DndProvider>
-            <Modal
-                isOpen={isOpen}
-                onRequestClose={toggleModal}
-                contentLabel="My dialog"
-                style={customStyles}
-            >
-                <div className={'flex justify-content_center'}>
-                    <div className={'hinh_tron'} />
-                </div>
-                <div className={'flex justify-content_center'}>
-                    <div className={'camera'} />
-                </div>
-                <div className={'flex mobile justify-content_center flex_column'} style={{
-                    width: '275px',
-                    height: window.innerHeight * 0.7,
-                }}>
-                    <h1 className={'text-align margin_bottom-10'}>Ứng dụng quản lý nhà thông minh</h1>
-                    <h3 className={'text-align'} style={{color: 'red'}}>
-                        Cảnh báo cháy nhà
-                    </h3>
-                    <img src={lua} />
-                    <audio autoPlay src={chaynha} />
-                </div>
-            </Modal>
+            {
+                isXO && <audio autoPlay src={chaomungbanvenha} />
+            }
         </div>
     );
 }
