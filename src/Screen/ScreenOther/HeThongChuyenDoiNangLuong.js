@@ -18,8 +18,9 @@ import Modal from 'react-modal';
 import dienluoi from '../../images/hethongchuyendoidiennang/dienluoi.png';
 import matdien from '../../images/hethongchuyendoidiennang/matdien.png';
 import dienmattroi from '../../images/hethongchuyendoidiennang/dienmattroi.png';
-import dongrem from '../../audio/dongrem.mp3';
-import morem from '../../audio/morem.mp3';
+import on from '../../audio/nangluongdienluoi.mp3';
+import of from '../../audio/nangluongmatroi.mp3';
+import load from '../../audio/chuyendoidiennang.mp3';
 
 const TYPE_ = {
     2: 'Sử dụng điện thoại từ xa'
@@ -45,6 +46,11 @@ const data = {
     dienmattroi,
     dienluoi,
     matdien,
+}
+const dataSpeaking = {
+    dienmattroi: of,
+    dienluoi: on,
+    matdien: load,
 }
 
 function HeThongChuyenDoiNangLuong() {
@@ -75,7 +81,7 @@ function HeThongChuyenDoiNangLuong() {
             <div className={'flex justify-content_center margin_bottom-10'}>
                 <img src={data[channel]} height={400} />
             </div>
-            <audio autoPlay src={data[channel] ? dongrem : morem} />
+            <audio autoPlay src={dataSpeaking[channel]} />
             <div className={'flex justify-content_center'}>
                 <div className={'flex flex_column justify-content_space-around'}>
                     {
