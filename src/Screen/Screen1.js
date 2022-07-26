@@ -17,7 +17,13 @@ import img1 from "../images/home.png";
 
 function Screen1({nexScreen}) {
     return(
-        <div className="Screen-Container">
+        <div
+            className="Screen-Container"
+            style={{
+                width: window.innerWidth,
+                height: window.innerHeight,
+            }}
+        >
             <img className={'Screen-Image'} src={img1} alt={'home.png'} />
             <div className={'Screen-Text'} onClick={() => nexScreen(2)}>
                Dậy học

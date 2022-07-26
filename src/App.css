@@ -40,7 +40,6 @@
 .Screen-Image {
     cursor: pointer;
     width: 750px;
-    height: 500px;
     object-fit: cover;
 }
 
