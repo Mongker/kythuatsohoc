@@ -65,13 +65,13 @@ function Screen3() {
                 component = <VideoBase type={'4'} />
                 break;
             case TYPE_ACTIVE_BTN['5']:
-                component = <HeThongGiaiTri /> //
+                component = !isShowVideo ? <HeThongGiaiTri /> : <VideoBase type={'5'} />
                 break;
             case TYPE_ACTIVE_BTN['6']:
                 component = <HeThongChuyenDoiNangLuong />
                 break;
             case TYPE_ACTIVE_BTN['7']:
-                component = <HeThongChieuSang />
+                component = !isShowVideo ? <HeThongChieuSang /> : <VideoBase type={'7'} />
                 break;
             case TYPE_ACTIVE_BTN['8']:
                 component = !isShowVideo ? <HeThongAnNinh /> : <VideoBase type={'8'} />

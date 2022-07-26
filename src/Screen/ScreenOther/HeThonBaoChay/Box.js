@@ -16,7 +16,7 @@ import React from 'react';
 import { useDrag } from 'react-dnd'
 import ItemTypes from './ItemTypes'
 import img from '../../../images/2-phong-cach-thiet-ke.jpg';
-import lua from '../../../images/fram.png';
+import lua from '../../../images/lua.gif';
 
 const style = {
     position: 'absolute',

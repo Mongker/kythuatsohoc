@@ -18,15 +18,17 @@ import dongrem from '../../video/hoatanh/dongrem.mp4';
 import dieuhoa from '../../video/hoatanh/dieuhoa.mp4';
 import anninh from '../../video/hoatanh/anninh.mp4';
 import tuoitieu from '../../video/hoatanh/tuoitieu.mp4';
+import anhsang from '../../video/hoatanh/anhsang.mp4';
+import giatri from '../../video/hoatanh/giaitri.mp4';
 
 const data = {
     1: dongrem,
     2: '',
     3: dieuhoa,
     4: tuoitieu,
-    5: '',
+    5: giatri,
     6: '',
-    7: '',
+    7: anhsang,
     8: anninh,
 };
 function VideoBase({type}) {
