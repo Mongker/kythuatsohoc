@@ -41,6 +41,7 @@ const Box = ({ id, left, top, hideSourceOnDrag, children, title }) => {
     }
     if(title === 'Home') return (
         <div
+            id={id}
             className="box"
             ref={drag}
             style={{ ...style, left, top, padding: 'unset', borderRadius: '15px' }}
@@ -51,6 +52,7 @@ const Box = ({ id, left, top, hideSourceOnDrag, children, title }) => {
     )
     return (
         <img
+            id={id}
             className="box"
             ref={drag}
             style={{ ...style, left, top, zIndex: 900, width: 50, height: 50 }}

@@ -13,14 +13,14 @@
  */
 
 import React from 'react';
-import img1 from "../images/home1.jpg";
+import img1 from "../images/home.png";
 
 function Screen1({nexScreen}) {
     return(
         <div className="Screen-Container">
-            <img className={'Screen-Image'} src={img1} alt={'home'} onClick={() => nexScreen(2)} />
-            <div className={'Screen-Text'}>
-                Click vào hình ngôi nhà để vào nhà
+            <img className={'Screen-Image'} src={img1} alt={'home.png'} />
+            <div className={'Screen-Text'} onClick={() => nexScreen(2)}>
+               Dậy học
             </div>
         </div>
     );

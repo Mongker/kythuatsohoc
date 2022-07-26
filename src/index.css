@@ -56,7 +56,8 @@ body {
 .container_3-item2 {
   align-items: center;
   justify-content: center;
-  width: 50%;
+    width: 855px;
+    height: 90%;
 }
 .container_3-item1-remote {
   background-color: #e0d3c3;
@@ -237,4 +238,26 @@ body {
 .xxx {
     border: 1px solid #131212 !important;
     border-radius: 16px;
+}
+.ant-drawer-header {
+    display: none;
+}
+.ant-drawer-body {
+    /* flex: 1 1; */
+    min-width: 0;
+    min-height: 0;
+    /* padding: 24px; */
+    /* overflow: auto; */
+    background-color: transparent;
+}
+.ant-drawer-wrapper-body {
+     background: transparent;
+}
+
+.ant-drawer-right .ant-drawer-content {
+    box-shadow: unset;
+}
+
+.ReactModal__Content {
+    inset: 50% auto auto 85% !important;
 }

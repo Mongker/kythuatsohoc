@@ -9,7 +9,7 @@ import Screen2 from "./Screen/Screen2";
 import Screen3 from "./Screen/Screen3";
 
 function App() {
-  const [screenApp, _setScreenApp] = useState(3);
+  const [screenApp, _setScreenApp] = useState(1);
 
   const ComponentScreenApp = useMemo(() => {
     let Component = <React.Fragment />
@@ -17,10 +17,10 @@ function App() {
       case 1:
         Component = Screen1;
         break;
+      // case 2:
+      //   Component = Screen2;
+      //   break;
       case 2:
-        Component = Screen2;
-        break;
-      case 3:
         Component = Screen3;
         break;
       default:

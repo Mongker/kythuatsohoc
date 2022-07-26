@@ -47,9 +47,8 @@ function HeThongChieuSang() {
         a: { top: 300, left: 0, title: 'Hot' },
         b: { top: 5, left: 0, title: 'Home' },
     })
-    console.log('boxes.a.top', boxes.a.top); // MongLV log fix bug
     React.useLayoutEffect(() => {
-        if(boxes.a.top <= 253) {
+        if(boxes.a.top <= 263) {
             timer1 = setTimeout(() => setXO(true), 1000)
         } else {
             timer1 = setTimeout(() => setXO(false), 1000)

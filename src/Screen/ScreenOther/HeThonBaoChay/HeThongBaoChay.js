@@ -46,8 +46,9 @@ function HeThongBaoChay() {
         a: { top: 650, left: 256, title: 'Hot' },
         b: { top: 5, left: 0, title: 'Home' },
     })
+    console.log('boxes', boxes); // MongLV log fix bug
     React.useLayoutEffect(() => {
-        if(boxes.a.top <= 471) {
+        if(boxes.a.top <= 485) {
             timer1 = setTimeout(() => setIsOpen(true), 1000)
         } else {
             timer1 = setTimeout(() => setIsOpen(false), 1000)

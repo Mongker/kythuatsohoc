@@ -13,6 +13,7 @@
  */
 
 import React, {useState} from 'react';
+import { Button, Drawer } from 'antd';
 // import PropTypes from 'prop-types';
 import smartHome from '../images/smarthome1.jpg'
 import HeThongManhRem from "./ScreenOther/HeThongManhRem";
@@ -23,6 +24,7 @@ import HeThongAnNinh from "./ScreenOther/HeThongAnNinh";
 import HeThongChieuSang from "./ScreenOther/HeThonDenChieuSang";
 import HeThongChuyenDoiNangLuong from './ScreenOther/HeThongChuyenDoiNangLuong';
 import VideoBase from './ScreenOther/VideoBase';
+import { lt } from 'lodash/lang';
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
@@ -48,6 +50,14 @@ const IS_SHOW = {
 function Screen3() {
     const [typeBtnActive, setTypeActive] = useState(TYPE_ACTIVE_BTN["1"]);
     const [isShowVideo, setShowVideo] = useState(true);
+    const [visible, setVisible] = useState(false);
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onClose = () => {
+        setVisible(false);
+    };
 
     const ComponentLeft = () => {
         let component = null;
@@ -89,9 +99,9 @@ function Screen3() {
             width: window.innerWidth,
             height: window.innerHeight,
         }}>
-            <div className={'root3-title'}>Hệ thống mô phỏng nhà thông minh</div>
-            <div className={'container_3 flex'}>
-                <div className={'container_3-item1 flex show_left'}>
+            <div className={'root3-title'}>{typeBtnActive}</div>
+            <div className={'container_3 flex justify-content_center' }>
+                <div className={'container_3-item1 flex justify-content_center show_left'}>
                     {
                         ComponentLeft()
                     }
@@ -101,9 +111,9 @@ function Screen3() {
                     style={{
                         height: '50px',
                         position: 'fixed',
-                        left: '20%',
+                        left: '10%',
                         right: 'auto',
-                        top: '5%',
+                        top: '45px',
                     }}
                 >
                     <button
@@ -114,7 +124,7 @@ function Screen3() {
                             borderTopRightRadius: 0,
                             marginRight: 2.5,
                             color: 'black',
-                            backgroundColor: isShowVideo ? '#45b700' : '#fff'
+                            backgroundColor: isShowVideo ? '#45b700' : '#fff',
                         }}
                         onClick={() => setShowVideo(!isShowVideo)}
                     >
@@ -135,29 +145,40 @@ function Screen3() {
                         Mô phỏng
                     </button>
                 </div>
-                <div className={'container_3-item2 flex'}>
-                    <div className={'container_3-item1-remote flex show_right'}>
-                        <h3>Bảng điều khiển</h3>
-                        {
-                            Object.values(TYPE_ACTIVE_BTN).map((item) => (
-                                <button
-                                    key={item}
-                                    className={'flex container_3-item1-remote-button button-19'}
-                                    onClick={() => {
-                                        setTypeActive(item)
-                                        setShowVideo(true)
-                                    }}
-                                    style={{
-                                        backgroundColor: item === typeBtnActive ? '#453ffb' : '#1899D6',
-                                    }}
-                                    role={'button'}
-                                >
-                                    {item}
-                                </button>
-                            ))
-                        }
+                <Button type="primary" onClick={showDrawer}>
+                    Menu
+                </Button>
+
+                <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible} width={'auto'} height={window.innerHeight}>
+                    <div className={'container_3-item2 flex'} onClick={() => {
+                        setVisible(false);
+                    }}>
+                        <div className={'container_3-item1-remote flex show_right'} onBlur={() => {
+                            console.log('123', 123); // MongLV log fix bug
+                            setVisible(false);
+                        }}>
+                            <h3>Bảng điều khiển</h3>
+                            {
+                                Object.values(TYPE_ACTIVE_BTN).map((item) => (
+                                    <button
+                                        key={item}
+                                        className={'flex container_3-item1-remote-button button-19'}
+                                        onClick={() => {
+                                            setTypeActive(item)
+                                            setShowVideo(true)
+                                        }}
+                                        style={{
+                                            backgroundColor: item === typeBtnActive ? '#453ffb' : '#1899D6',
+                                        }}
+                                        role={'button'}
+                                    >
+                                        {item}
+                                    </button>
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
+                </Drawer>
             </div>
         </div>
     );
