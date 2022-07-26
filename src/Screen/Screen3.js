@@ -39,10 +39,10 @@ const IS_SHOW = {
     2: [false, false],
     3: [true, true],
     4: [true, false],
-    5: [false, true],
-    6: 'Hệ thống chuyển đổi năng lượng',
-    7: 'Hệ thống chiếu sáng',
-    8: 'Hệ thống an ninh',
+    5: [true, true],
+    6: [true, true],
+    7: [false, true],
+    8: [true, true],
 }
 
 function Screen3() {

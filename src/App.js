@@ -1,6 +1,7 @@
 import React, {useCallback, useMemo, useState} from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
 
 // Screen
 import Screen1 from "./Screen/Screen1";
