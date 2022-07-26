@@ -20,10 +20,11 @@ import anninh from '../../video/hoatanh/anninh.mp4';
 import tuoitieu from '../../video/hoatanh/tuoitieu.mp4';
 import anhsang from '../../video/hoatanh/anhsang.mp4';
 import giatri from '../../video/hoatanh/giaitri.mp4';
+import baochay from '../../video/hoatanh/baochay.mp4';
 
 const data = {
     1: dongrem,
-    2: '',
+    2: baochay,
     3: dieuhoa,
     4: tuoitieu,
     5: giatri,

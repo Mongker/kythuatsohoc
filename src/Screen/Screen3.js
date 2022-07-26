@@ -56,7 +56,7 @@ function Screen3() {
                 component = !isShowVideo ? <HeThongManhRem /> : <VideoBase type={'1'} />
              break;
             case TYPE_ACTIVE_BTN['2']:
-                component = <HeThongBaoChay />
+                component = !isShowVideo ? <HeThongBaoChay /> : <VideoBase type={'2'} />
              break;
             case TYPE_ACTIVE_BTN['3']:
                 component = !isShowVideo ? <HeThongThietBiNhiet /> : <VideoBase type={'3'} />
