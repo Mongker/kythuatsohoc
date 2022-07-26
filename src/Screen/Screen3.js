@@ -22,13 +22,24 @@ import HeThongGiaiTri from "./ScreenOther/HeThongGiaiTri";
 import HeThongAnNinh from "./ScreenOther/HeThongAnNinh";
 import HeThongChieuSang from "./ScreenOther/HeThonDenChieuSang";
 import HeThongChuyenDoiNangLuong from './ScreenOther/HeThongChuyenDoiNangLuong';
+import VideoBase from './ScreenOther/VideoBase';
 
 const TYPE_ACTIVE_BTN = {
     1: 'Hệ thống mảnh rèm',
     2: 'Hệ thống báo động cháy',
     3: 'Hệ thống thiết bị nhiệt',
-    // 4: 'Hệ thống thoát nước',
+    4: 'Hệ thống nước',
     5: 'Hệ thống giải trí',
+    6: 'Hệ thống chuyển đổi năng lượng',
+    7: 'Hệ thống chiếu sáng',
+    8: 'Hệ thống an ninh',
+}
+const IS_SHOW = {
+    1: [true, true],
+    2: [false, false],
+    3: [true, true],
+    4: [true, false],
+    5: [false, true],
     6: 'Hệ thống chuyển đổi năng lượng',
     7: 'Hệ thống chiếu sáng',
     8: 'Hệ thống an ninh',
@@ -36,24 +47,25 @@ const TYPE_ACTIVE_BTN = {
 
 function Screen3() {
     const [typeBtnActive, setTypeActive] = useState(TYPE_ACTIVE_BTN["1"]);
+    const [isShowVideo, setShowVideo] = useState(true);
 
     const ComponentLeft = () => {
         let component = null;
         switch (typeBtnActive) {
             case TYPE_ACTIVE_BTN['1']:
-                component = <HeThongManhRem />
+                component = !isShowVideo ? <HeThongManhRem /> : <VideoBase type={'1'} />
              break;
             case TYPE_ACTIVE_BTN['2']:
                 component = <HeThongBaoChay />
              break;
             case TYPE_ACTIVE_BTN['3']:
-                component = <HeThongThietBiNhiet />
+                component = !isShowVideo ? <HeThongThietBiNhiet /> : <VideoBase type={'3'} />
                 break;
-            // case TYPE_ACTIVE_BTN['4']:
-            //     component = <HeThongGiaiTri />
-            //     break;
+            case TYPE_ACTIVE_BTN['4']:
+                component = <VideoBase type={'4'} />
+                break;
             case TYPE_ACTIVE_BTN['5']:
-                component = <HeThongGiaiTri />
+                component = <HeThongGiaiTri /> //
                 break;
             case TYPE_ACTIVE_BTN['6']:
                 component = <HeThongChuyenDoiNangLuong />
@@ -62,7 +74,7 @@ function Screen3() {
                 component = <HeThongChieuSang />
                 break;
             case TYPE_ACTIVE_BTN['8']:
-                component = <HeThongAnNinh />
+                component = !isShowVideo ? <HeThongAnNinh /> : <VideoBase type={'8'} />
                 break;
             default:
         }
@@ -84,6 +96,45 @@ function Screen3() {
                         ComponentLeft()
                     }
                 </div>
+                <div
+                    className={'flex flex_row justify-content_center align-items_center'}
+                    style={{
+                        height: '50px',
+                        position: 'fixed',
+                        left: '20%',
+                        right: 'auto',
+                        top: '5%',
+                    }}
+                >
+                    <button
+                        className={'button-19 margin_bottom-10'}
+                        style={{
+                            width: '150px',
+                            borderBottomRightRadius: 0,
+                            borderTopRightRadius: 0,
+                            marginRight: 2.5,
+                            color: 'black',
+                            backgroundColor: isShowVideo ? '#45b700' : '#fff'
+                        }}
+                        onClick={() => setShowVideo(!isShowVideo)}
+                    >
+                        Mô tả
+                    </button>
+                    <button
+                        className={'button-19 margin_bottom-10'}
+                        style={{
+                            width: '150px',
+                            borderBottomLeftRadius: 0,
+                            borderTopLeftRadius: 0,
+                            marginLeft: 2.5,
+                            color: 'black',
+                            backgroundColor: !isShowVideo ? '#45b700' : '#fff'
+                        }}
+                        onClick={() => setShowVideo(!isShowVideo)}
+                    >
+                        Mô phỏng
+                    </button>
+                </div>
                 <div className={'container_3-item2 flex'}>
                     <div className={'container_3-item1-remote flex show_right'}>
                         <h3>Bảng điều khiển</h3>
@@ -92,7 +143,10 @@ function Screen3() {
                                 <button
                                     key={item}
                                     className={'flex container_3-item1-remote-button button-19'}
-                                    onClick={() => setTypeActive(item)}
+                                    onClick={() => {
+                                        setTypeActive(item)
+                                        setShowVideo(true)
+                                    }}
                                     style={{
                                         backgroundColor: item === typeBtnActive ? '#453ffb' : '#1899D6',
                                     }}
