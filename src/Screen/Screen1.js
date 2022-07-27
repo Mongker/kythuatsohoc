@@ -26,7 +26,7 @@ function Screen1({nexScreen}) {
         >
             <img className={'Screen-Image'} src={img1} alt={'home.png'} />
             <div className={'Screen-Text'} onClick={() => nexScreen(2)}>
-               Dậy học
+               Dạy học
             </div>
         </div>
     );
